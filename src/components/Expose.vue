@@ -1,17 +1,16 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, defineExpose } from "vue";
 
-const a = 1
-const b = ref(2)
+const a = 1;
+const b = ref(2);
 
 defineExpose({
   a,
-  b
-})
-
+  b,
+});
 </script>
 
 <template lang="">
-    <div>{{a}}</div>
-    <div>{{b}}</div>
+  <div>{{ a }}</div>
+  <div>{{ b }}</div>
 </template>

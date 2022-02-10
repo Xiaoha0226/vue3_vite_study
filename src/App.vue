@@ -1,38 +1,34 @@
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import HelloWorld from "./components/HelloWorld.vue"
-import MyDirective from "./components/MyDirective.vue"
-import PropsAndEmits from "./components/PropsAndEmits.vue"
-import Expose from "./components/Expose.vue"
-import { ref, onMounted } from 'vue'
+import HelloWorld from "./components/HelloWorld.vue";
+import MyDirective from "./components/MyDirective.vue";
+import PropsAndEmits from "./components/PropsAndEmits.vue";
+import Expose from "./components/Expose.vue";
+import SuspenseComp from "./components/Suspense.vue";
+import { ref, onMounted } from "vue";
 
-const exposeRef = ref(null)
+const exposeRef = ref(null);
 
 onMounted(() => {
   // DOM 元素将在初始渲染后分配给 ref
-  console.log(exposeRef.value)
-  console.log(exposeRef.value.a)
-  console.log(exposeRef.value.b)
-})
+  console.log(exposeRef.value);
+  console.log(exposeRef.value.a);
+  console.log(exposeRef.value.b);
+});
 
 const submitFun = (val) => {
-  console.log("=====submitFun=====:", val)
-}
+  console.log("=====submitFun=====:", val);
+};
 </script>
 
 <template>
-  <img
-    alt="Vue logo"
-    src="./assets/logo.png"
-  >
+  <img alt="Vue logo" src="./assets/logo.png" />
   <HelloWorld msg="Hello Vue 3 + Vite22" />
   <MyDirective />
-  <PropsAndEmits
-    foo="foo"
-    @submit="submitFun"
-  />
+  <PropsAndEmits foo="foo" @submit="submitFun" />
   <Expose ref="exposeRef" />
+  <SuspenseComp />
 </template>
 
 <style>

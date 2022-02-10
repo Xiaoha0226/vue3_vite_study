@@ -1,30 +1,30 @@
 <script setup>
-
-const email = 'email'
-
+// eslint-disable-next-line no-unused-vars
 const props = defineProps({
-  foo: String
-})
+  foo: {
+    type: String,
+    default: "",
+  },
+});
 
 const emit = defineEmits({
-    click: null,
-    submit: payload => {
-      if (payload.email&& payload.password) {
-        return true
-      } else {
-        console.warn(`Invalid submit event payload!`)
-        return false
-      }
+  click: null,
+  submit: (payload) => {
+    if (payload.email && payload.password) {
+      return true;
+    } else {
+      console.warn(`Invalid submit event payload!`);
+      return false;
     }
-})
+  },
+});
 
-const submitButtonClick = ()=>{
-    emit('submit',{})
-}
-
+const submitButtonClick = () => {
+  emit("submit", {});
+};
 </script>
 
-<template lang="">
-    <div>{{foo}}</div>
-    <button @click="submitButtonClick">submit</button>
+<template>
+  <div>{{ foo }}</div>
+  <button @click="submitButtonClick">submit</button>
 </template>
